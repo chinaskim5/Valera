@@ -1,0 +1,179 @@
+actions:
+  go_to_work:
+    name: Пойти на работу
+    conditions:
+      - field: mana
+        operator: '<'
+        value: 50
+      - field: fatigue
+        operator: '<'
+        value: 10
+    events:
+      - effect:
+          field: fun
+          operator: '-'
+          value: 5
+      - effect:
+          field: mana
+          operator: '-'
+          value: 30
+      - effect:
+          field: money
+          operator: '+'
+          value: 100
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 70
+  behold_nature:
+    events:
+      - effect:
+          field: mana
+          operator: '-'
+          value: 10
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 10
+  drink_wine_and_watch_the_series:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 5
+      - effect:
+          field: mana
+          operator: '+'
+          value: 30
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 10
+      - effect:
+          field: money
+          operator: '-'
+          value: 20
+      - effect:
+          field: fun
+          operator: '-'
+          value: 1
+  go_to_bar:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 10
+      - effect:
+          field: mana
+          operator: '+'
+          value: 60
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 40
+      - effect:
+          field: money
+          operator: '-'
+          value: 100
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+  drink_with_marginalized_personalities:
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 80
+      - effect:
+          field: mana
+          operator: '+'
+          value: 90
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 80
+      - effect:
+          field: money
+          operator: '-'
+          value: 150
+      - effect:
+          field: fun
+          operator: '+'
+          value: 5
+  sing_in_the_subway:
+    events:
+      - effect:
+          field: money
+          operator: '+'
+          value: 50
+        conditions:
+          - field: mana
+            operator: '>'
+            value: 40
+          - field: mana
+            operator: '<'
+            value: 70
+      - effect:
+          field: mana
+          operator: '+'
+          value: 10
+      - effect:
+          field: fatigue
+          operator: '+'
+          value: 20
+      - effect:
+          field: money
+          operator: '+'
+          value: 10
+      - effect:
+          field: fun
+          operator: '+'
+          value: 1
+  sleep:
+    events:
+      - effect:
+          field: health
+          operator: '+'
+          value: 90
+        conditions:
+          - field: mana
+            operator: '<'
+            value: 30
+      - effect:
+          field: mana
+          operator: '-'
+          value: 50
+      - effect:
+          field: fatigue
+          operator: '-'
+          value: 70
+      - effect:
+          field: fun
+          operator: '-'
+          value: 3
+        conditions:
+          - field: mana
+            operator: '>'
+            value: 70
+  sucide:
+    name: Выпилиться
+    conditions:
+      - field: mana
+        operator: '>'
+        value: 50
+      - field: fatigue
+        operator: '>'
+        value: 60
+      - field: fun
+        operator: '<='
+        value: -3
+    events:
+      - effect:
+          field: health
+          operator: '-'
+          value: 1000
