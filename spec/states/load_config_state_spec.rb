@@ -6,7 +6,7 @@ describe GameStates::LoadConfigs do
   describe '#load' do
     context 'check loading state from Config' do
       it 'load states from file' do
-        expect(ConfigAdapter.instance.load 'spec/config/test_config.yml').not_to be nil
+        expect(ConfigAdapter.instance.load './test_config.yml').not_to be nil
       end
     end
   end

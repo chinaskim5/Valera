@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require_relative '../spec_helper'
 
 describe GameStates::ResetPlayer do
   subject do

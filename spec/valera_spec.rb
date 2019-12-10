@@ -1,3 +1,4 @@
+require_relative './spec_helper'
 
 describe Valera do
   subject(:valid_valera) do
